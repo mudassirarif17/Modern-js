@@ -1,3 +1,5 @@
+// https://youtu.be/RHCrbCW0EG0?si=oXcSleiTgxFMQcK8
+
 let marks_class_12 = [98,65,74,89,false,"Not present"];
 
 console.log(marks_class_12)
