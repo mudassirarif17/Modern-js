@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake water Game</title>
+</head>
+<body>
+    <h1 id="res"></h1>
+    <script>
+        let user = prompt("Enter S , W or G : ");
+        user = user.toLocaleUpperCase();
+        let cpuI = Math.floor(Math.random() * 3);
+        let cpu = ["S" , "W" , "G"][cpuI];
+        console.log(cpu);
+
+        const match =(cpu , user)=>{
+            if(cpu === user){
+                return "Match Tied";
+            }
+            else if(cpu === "S" && user === "W"){
+                return "CPU is win";
+            }
+            else if(cpu === "S" && user === "G"){
+                return "User is win";
+            }
+            else if(cpu === "W" && user === "G"){
+                return "CPU is win";
+            }
+            else if(cpu === "W" && user === "S"){
+                return "User is win";
+            }
+            else if(cpu === "G" && user === "S"){
+                return "CPU is win";
+            }
+            else if(cpu === "G" && user === "W"){
+                return "User is win";
+            }
+        }
+
+        let result = match(cpu,user);
+        let res = document.querySelector("#res");
+        res.innerHTML = `CPU Choose ${cpu} and User choose ${user} and  The Result is : ` + result;
+    </script>
+</body>
+</html>
