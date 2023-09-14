@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8 PS</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .bulb{
+            height: 340px;
+            width: 340px;
+            /* background-color: yellow;  */
+        }
+
+        .bulb-container{
+            height: 340px;
+            width: 340px;
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="bulb" class="bulb-container bulb"></div>
+    <button id="btn">Toggle Me</button>
+
+    <script>
+        // Problem 1 write a program to show different alerts when differents buttons are clicked 
+
+
+        // Problem 2 Create a website which is capable of storing bookmark of your favourite websites using href
+
+
+        // Problem 3 Repeat Q2 Using event listener 
+
+
+        // Problem 4 Write a javascript program to keep fetching contents of a website (every 5 seconds)
+
+
+        // Problem 5 Create a glowing bulb effects using classlist toggle method in javaScript 
+        var btn = document.querySelector('#btn');
+        var ele = document.querySelector('#bulb');
+        btn.addEventListener('click' , glow);
+        function glow(){
+            ele.classList.toggle('bulb-container');
+        }
+
+
+    </script>
+</body>
+</html>

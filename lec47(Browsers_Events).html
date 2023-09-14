@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browsers Event In Js</title>
+</head>
+<body>
+    <!-- <div class="container" onmouseenter="alert('container k under mouse gya')"> -->
+        <div class="container">
+            <button onclick="alert('Hello world'); let b = 9; console.log(b);">Click</button>
+        </div>
+    <!-- </div> -->
+
+    <script>
+        let a = document.getElementsByClassName("container")[0];
+        a.onclick =()=>{
+            let c = document.getElementsByClassName("container")[0];
+            c.innerHTML = "Hello world";
+        }
+    </script>
+</body>
+</html>

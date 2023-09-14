@@ -52,24 +52,24 @@
         // func();
 
         // Q3 : create a promise which is reject afetr 3 sec use an async/await to get its value use try catch to handle it error 
-        let p =()=>{ 
-            return new Promise((resolved , reject)=>{
-            setTimeout(()=>{
-                // reject(`The promise is rejected after 3 seconds`);
-                reject(new Error("The promise is rejected after 3 seconds"));
-            },3000)
-        })
-        }
+        // let p =()=>{ 
+        //     return new Promise((resolved , reject)=>{
+        //     setTimeout(()=>{
+        //         // reject(`The promise is rejected after 3 seconds`);
+        //         reject(new Error("The promise is rejected after 3 seconds"));
+        //     },3000)
+        // })
+        // }
 
-        const a = async()=>{
-            try{
-                let c = await p();
-                alert(c);
-            }catch(err){
-                alert(err);
-            }
-        }
-        a();
+        // const a = async()=>{
+        //     try{
+        //         let c = await p();
+        //         alert(c);
+        //     }catch(err){
+        //         alert(err);
+        //     }
+        // }
+        // a();
 
         // Example of IIFE
         // (async()=>{
@@ -78,6 +78,39 @@
         // })();
 
         // Q4 : Write a program using promise.all() inside an async await 3 promises . compare its result with the   we await the promise one by one 
+        let p1 = async()=> {
+            return new Promise((resolved , reject)=>{
+                setTimeout(() => {
+                    resolved(10);
+                }, 2000);
+            })
+        }
+        let p2 = async()=> {
+            return new Promise((resolved , reject)=>{
+                setTimeout(() => {
+                    resolved(10);
+                }, 1000);
+            })
+        }
+        let p3 = async()=> {
+            return new Promise((resolved , reject)=>{
+                setTimeout(() => {
+                    resolved(10);
+                }, 3000);
+            })
+        }
+
+    const run = async ()=>{
+        console.time("run");
+        let a1 = await p1();
+        let a2 = await p2();
+        let a3 = await p3();
+        let a1a2a3 = await Promise.all([a1,a2,a3]);
+        console.log(a1a2a3)
+        console.timeEnd("run")
+    }
+
+    run();
     </script>
 </body>
 </html>
