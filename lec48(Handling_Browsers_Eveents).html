@@ -3,12 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Handling Browser events</title>
 </head>
 <body>
+    <button id="btn">Click</button>
     
     <script>
+        // Event.type = event type
+        // Event.currentTarget = Element that hanle the event 
+        // event.clientx or event.clienty = coordinate of the cursor 
+
+        // let a = prompt("What is your favourite number : ")
+
+        var btn = document.getElementById('btn');
+        let x = function(e){
+            console.log(e.target)
+            console.log(e.type , e.clientX , e.clientY);
+            console.log("Hello world1!");
+        }
+        let y = function(e){
+            console.log("Hello world2!");
+        }
+
+        btn.addEventListener('click' , x )
+        // btn.addEventListener('click' , y)
         
+        // if(a==2){
+        //     btn.removeEventListener('click', y)
+        // }
     </script>
 </body>
 </html>
