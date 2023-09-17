@@ -1,0 +1,1 @@
+// use javascript to create a game of sanke water and gun . this game should ask you to enter S , W , or G the computer should be able to randomly generate S , W , G and declare win or loss using alert use confirm and prompt whenever required 

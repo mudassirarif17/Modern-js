@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .mainh{
+            text-align: center;
+        }
+        .container{
+            width: 60.5vw;
+            margin: 5px auto;
+        }
+        .inpContainer{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .inp{
+            width: 60vw;
+            font-size: 16px;
+            padding: 4px;
+            border-radius: 8px;
+        }
+        button {
+            margin: 5px 3px;
+            font-size: 16px;
+            padding: 4px 8px;
+            border-radius: 8px;
+            border: 1px solid white;
+        }
+        .add{
+            background-color: blue;
+            color: white;
+        }
+        .dlt{
+            background-color: red;
+            color: white;
+        }
+        .add:hover{
+            background-color: white;
+            color: blue;
+            border-color: blue;
+        }
+        .dlt:hover{
+            background-color: white;
+            color: red;
+            border-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="mainh">Add your Todo</h1>
+    <form action="" class="container">
+        <div class="inpContainer">
+    <div>
+        <label for="">Title : </label>
+        <br>
+        <input class="inp" type="text" name="title" id="title" placeholder="Enter Your Title">
+    </div>
+    <div>
+        <label for="">Description : </label>
+        <br>
+        <input class="inp" type="text" name="desc" id="desc" placeholder="Enter Your description">
+    </div>
+</div>
+    <div>
+        <button id="submit" type="submit" class="add">Add Todo</button>
+        <button id="delete" class="dlt">Delete Todo</button>
+    </div>
+    <div id="todo">
+
+    </div>
+</form>
+
+    <script>
+        var submit = document.querySelector('#submit');
+        submit.addEventListener('click' , (e)=>{
+            e.preventDefault();
+            var title = document.querySelector('#title');
+            var desc = document.querySelector('#desc');
+            let titlec = title.value;
+            let descc = desc.value;
+            localStorage.setItem("todo" , JSON.stringify([titlec , descc]));
+            var todo = document.querySelector('#todo');
+            todo.innerHTML = `
+            <h1>${titlec}</h1>
+            <p>${descc}</p>
+            `
+            title.value = "";
+            descc.value = "";
+
+            var delete1 = document.querySelector("#delete");
+            delete1.addEventListener('clcik' , (e)=>{
+                e.preventDefault();
+                localStorage.removeItem("todo");
+            })
+        })
+    </script>
+</body>
+</html>
