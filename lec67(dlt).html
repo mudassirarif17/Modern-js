@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const createTodo = async (todo)=>{
+            let options = {
+                method : "POST",
+                headers : {
+                    "content-type" : "application/json"
+                },
+                body : SON.stringify(tdoo)
+            }
+
+            let p = await fetch('https://jsonplaceholder.typicode.com/posts' , options);
+            let response = await p.json();
+            return response;
+        }
+
+        const getTodo = async (id)=>{
+            let p = await fetch('https://jsonplaceholder.typicode.com/posts'+id);
+            let res = await p.json();
+            return res;
+        }
+    //     const getTodo = async (id)=>{
+    //     let response =  await fetch('https://jsonplaceholder.typicode.com/posts'+id)
+    //     let r = await response.json();
+    //     return r;
+    // }
+
+        const mainFunc = async ()=>{
+            let todo = {
+                title : "mudassir",
+                body : "bhai jan",
+                uId : 101,
+            }
+            let r1 = await (todo);
+            console.log(todo);
+            console.log(getTodo(45))
+
+        }
+
+        mainFunc();
+    </script>
+</body>
+</html>
