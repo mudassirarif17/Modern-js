@@ -1,0 +1,16 @@
+{
+  "name": "lec96(npm_packages)",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lec96(npm_And_packages).js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon lec98(Express).js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
