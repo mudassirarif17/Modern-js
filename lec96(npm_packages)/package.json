@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "lec96(npm_And_packages).js",
+  "type" : "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start" : "nodemon lec98(Express).js"
